@@ -40,11 +40,12 @@ local args = {...}
 -- Parse recipe arguments
 local recipe = {}
 for k, v in ipairs(args) do
-    local item_parts = strings.split(v, "/", true, 2) -- <item id>/<data value (optional)>, eg `galacticraftcore:basic_item/11`
+    -- <item id>/<data value (optional)>, eg `galacticraftcore:basic_item/11`
+    local id, data = v:match("([^/]+)%/?(.*)")    
     recipe[k] = {
         item = {
-            id = item_parts[1],
-            data = item_parts[2] and tonumber(item_parts[2])
+            id = id,
+            data = data and tonumber(data)
         },
         count = 1
     }
