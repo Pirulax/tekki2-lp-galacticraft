@@ -1,6 +1,4 @@
 local pretty = require "cc.pretty"
-local strings = require "cc.strings"
-
 
 local function find_item_slot(req_item)
     -- Find the slot of the item in the turtle inventory
